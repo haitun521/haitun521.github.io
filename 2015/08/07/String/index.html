@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>String虐我千百遍，我待String如初恋 | 呆呆与笨笨的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="简介
+Strings are constant; their values cannot be changed after they are created. String buffers support mutable strings. Because String objects are immutable they can be shared. 
+
+翻译：String(final class">
+<meta property="og:type" content="article">
+<meta property="og:title" content="String虐我千百遍，我待String如初恋">
+<meta property="og:url" content="http://haitun521.github.io/2015/08/07/String/index.html">
+<meta property="og:site_name" content="呆呆与笨笨的博客">
+<meta property="og:description" content="简介
+Strings are constant; their values cannot be changed after they are created. String buffers support mutable strings. Because String objects are immutable they can be shared. 
+
+翻译：String(final class">
+<meta property="og:updated_time" content="2015-09-02T03:29:30.312Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="String虐我千百遍，我待String如初恋">
+<meta name="twitter:description" content="简介
+Strings are constant; their values cannot be changed after they are created. String buffers support mutable strings. Because String objects are immutable they can be shared. 
+
+翻译：String(final class">
+  
+    <link rel="alternative" href="/atom.xml" title="呆呆与笨笨的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="https://avatars0.githubusercontent.com/u/9667904?v=3&amp;s=460" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">呆呆</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">一只会Android开发的程序猿</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/tags/随笔">随笔</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/haitun521" title="github">github</a>
+					        
+								<a class="mail" target="_blank" href="/daidaiyubenben@gmail.com" title="mail">mail</a>
+					        
+								<a class="zhihu" target="_blank" href="/#" title="zhihu">zhihu</a>
+					        
+								<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/android/" style="font-size: 10px;">android</a> <a href="/tags/android-studio/" style="font-size: 10px;">android studio</a> <a href="/tags/equals与/" style="font-size: 10px;">equals与==</a> <a href="/tags/hashCode/" style="font-size: 10px;">hashCode</a> <a href="/tags/int与Intager/" style="font-size: 10px;">int与Intager</a> <a href="/tags/lambda/" style="font-size: 10px;">lambda</a> <a href="/tags/自动装箱与拆箱/" style="font-size: 10px;">自动装箱与拆箱</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">呆呆</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="https://avatars0.githubusercontent.com/u/9667904?v=3&amp;s=460" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">呆呆</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">一只会Android开发的程序猿</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/tags/随笔">随笔</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/haitun521" title="github">github</a>
+			        
+						<a class="mail" target="_blank" href="/daidaiyubenben@gmail.com" title="mail">mail</a>
+			        
+						<a class="zhihu" target="_blank" href="/#" title="zhihu">zhihu</a>
+			        
+						<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-String" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/08/07/String/" class="article-date">
+  	<time datetime="2015-08-07T07:40:54.000Z" itemprop="datePublished">2015-08-07</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      String虐我千百遍，我待String如初恋
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/String/">String</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/equals与/">equals与==</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hashCode/">hashCode</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/Java/">Java</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="简介">简介</h2><blockquote>
+<p>Strings are constant; their values cannot be changed after they are created. String buffers support mutable strings. Because String objects are immutable they can be shared. </p>
+</blockquote>
+<p>翻译：String(final class修饰)是字符串常量，值不可改变，并且是线程安全的<strong>[JDK 1.8]</strong></p>
+<h2 id="==与equals()方法的区别">==与equals()方法的区别</h2><ul>
+<li><strong> == </strong> 比较的是内存地址</li>
+<li><strong>equals()</strong> String类中的equals()方法重写了Object类的equals()方法，它首先判断的是内存地址是否相同；若相同，返回为true，否则再判断内容是否相同；若相同，返回为true，否则为false。</li>
+</ul>
+<h2 id="String类直接赋值与new_String()的区别">String类直接赋值与new String()的区别</h2><pre><code><span class="keyword">String</span> a=<span class="string">"java"</span>;
+<span class="keyword">String</span> b=<span class="string">"java"</span>;
+<span class="keyword">String</span> c=<span class="keyword">new</span> <span class="keyword">String</span>(<span class="string">"java"</span>);
+<span class="keyword">String</span> d=<span class="keyword">new</span> <span class="keyword">String</span>(<span class="string">"java"</span>);
+
+System.out.<span class="built_in">println</span>(a==b);<span class="comment">//true</span>
+System.out.<span class="built_in">println</span>(a==c);<span class="comment">//false</span>
+System.out.<span class="built_in">println</span>(a.equals(c));<span class="comment">//true</span>
+System.out.<span class="built_in">println</span>(d==c);<span class="comment">//false</span>
+</code></pre><p>首先，我们要知道结果<strong>JVM中的常量池会确保一个字符串常量只有一个拷贝</strong>。a和b是字符串常量，在程序编译期已经被确定了，编译程序先去字符串常量池检查，是否存在“java”，如果不存在，则在常量池中开辟一个内存空间存放“java”；如果存在的话，则不用重新开辟空间。在程序运行时，a和b都指向同一个常量，则a==b返回true。<strong>用new String()创建的字符串不是常量，不能在编译期确定，所以new String() 创建的字符串不会放入常量池中，它会在堆内存中创建，每调用一次就会创建一个新的对象。</strong>c指向堆内存对象的首地址，则a==c返回false，但a与c的内容一样，所以a.equals(c)返回为true，d==c返回为false。</p>
+<blockquote>
+<p><strong>常量池(constant pool)</strong>指的是在编译期被确定，并被保存在已编译的.class文件中的一些数据。它包括了关于类、方法、接口等中的常量，也包括字符串常量。   </p>
+</blockquote>
+<h3 id="示例1-">示例1.</h3><pre><code><span class="keyword">String</span> a=<span class="string">"java"</span>;
+<span class="keyword">String</span> b=<span class="string">"ja"</span>+<span class="string">"va"</span>;
+
+System.out.<span class="built_in">println</span>(a==b);<span class="comment">//true</span>
+System.out.<span class="built_in">println</span>(a.equals(b));<span class="comment">//true</span>
+</code></pre><p>Sting a是字符串常量，在程序编译期已经被确定；”ja”和”va”是字符串常量，当一个字符串由多个字符串常量连接而成时，它自己肯定也是字符串常量，所以b也同样在编译期就被解析为一个字符串常量，也是常量池中”java”的一个引用。</p>
+<h3 id="示例2-">示例2.</h3><pre><code><span class="keyword">String</span> a=<span class="string">"java"</span>;
+<span class="keyword">String</span> b=<span class="string">"ja"</span>+<span class="keyword">new</span> <span class="keyword">String</span>(<span class="string">"va"</span>);
+
+System.out.<span class="built_in">println</span>(a==b);<span class="comment">//false</span>
+System.out.<span class="built_in">println</span>(a.equals(b));<span class="comment">//true </span>
+</code></pre><p>String b因为有new String(“va”)不能在程序编译期确定下来，所以它不是字符串常量，不能存放到常量池中。程序运行期时它在堆内存中会被创建。</p>
+<h3 id="示例3-">示例3.</h3><pre><code><span class="keyword">String</span> a=<span class="string">"java1"</span>;
+<span class="keyword">String</span> b=<span class="string">"java"</span>+<span class="number">1</span>;
+
+System.out.<span class="built_in">println</span>(a==b);<span class="comment">//true</span>
+System.out.<span class="built_in">println</span>(a.equals(b));<span class="comment">//true</span>
+</code></pre><p>JVM对于字符串常量的”+”号连接，将程序编译期，JVM就将常量字符串的”+”连接优化为连接后的值，拿”java” + 1来说，经编译器优化后在class中就已经是java1。在编译期其字符串常量的值就确定下来，故最终的结果都为true。</p>
+<h3 id="示例4-">示例4.</h3><pre><code><span class="keyword">String</span> a=<span class="string">"java"</span>;
+<span class="keyword">String</span> b=<span class="string">"ja"</span>;
+b=b+<span class="string">"va"</span>;
+
+System.out.<span class="built_in">println</span>(a==b);<span class="comment">//false</span>
+System.out.<span class="built_in">println</span>(a.equals(b));<span class="comment">//true</span>
+</code></pre><p>JVM对于字符串引用，由于在字符串的”+”连接中，有字符串引用存在，而引用的值在程序编译期是无法确定的，即b + “va”无法被编译器优化，只有在程序运行期来动态分配并将连接后的新地址赋给b。所以上面程序的结果也就为false。</p>
+<h3 id="示例5-">示例5.</h3><pre><code><span class="keyword">String</span> a=<span class="string">"java"</span>;
+<span class="keyword">final</span> <span class="keyword">String</span> b=<span class="string">"ja"</span>;
+<span class="keyword">String</span> c=b+<span class="string">"va"</span>;
+
+System.out.<span class="built_in">println</span>(a==c);<span class="comment">//true</span>
+System.out.<span class="built_in">println</span>(a.equals(c));<span class="comment">//true</span>
+</code></pre><p>对于final修饰的变量，它在编译时被解析为常量值。经过编译器的编译优化，String c同样被解析为一个字符串常量。</p>
+<h3 id="示例6-">示例6.</h3><pre><code><span class="keyword">String</span> a=<span class="string">"java"</span>;
+<span class="keyword">String</span> b=<span class="keyword">new</span> <span class="keyword">String</span>(<span class="string">"java"</span>);
+
+System.out.<span class="built_in">println</span>(a==b.intern());<span class="comment">//true</span>
+System.out.<span class="built_in">println</span>(a.equals(b));<span class="comment">//true</span>
+</code></pre><p>String.intern()方法介绍：当调用 intern 方法时，如果String常量池中已经包含一个等于此 String 对象的字符串(该对象由 equals(Object) 方法确定)，则返回池中的字符串。否则，将此 String 对象添加到池中，并且返回此 String 对象的引用。</p>
+<h2 id="String的_+_连接及不可变性">String的 + 连接及不可变性</h2><pre><code><span class="typename">String</span> a=<span class="string">"ja"</span>;
+<span class="typename">String</span> b=a+<span class="string">"va"</span>;
+ //实质上b的实现过程是：
+//<span class="typename">String</span> b = <span class="keyword">new</span> StringBuilder(a).append(<span class="string">"va"</span>).toString();
+<span class="typename">String</span> c=<span class="string">"ja"</span>+<span class="string">"va"</span>;//等价于<span class="typename">String</span> c=<span class="string">"java"</span>;
+</code></pre><p>当使用+进行字符串连接时，实际上是产生了一个StringBuilder对象和一个String对象。</p>
+<h2 id="String的toUpperCase()">String的toUpperCase()</h2><pre><code>String a=<span class="string">"JAVA"</span>;
+String b=a.toUpperCase<span class="params">()</span>;
+
+System.out.println<span class="params">(a==b)</span>;<span class="comment">//true</span>
+System.out.println<span class="params">(a.equals<span class="params">(b)</span>)</span>;<span class="comment">//true</span>
+</code></pre><p>toUpperCase()方法介绍：toUpperCase()返回一个新的String的对象，它将表示原字符串的大写形式，若原字符串本身就是大写形式，则返回原始对象。<br>toLowerCase()与trim()同上。</p>
+<h2 id="String的hashCode()">String的hashCode()</h2><pre><code>String a=<span class="string">"3"</span>;
+String b=new String<span class="params">(<span class="string">"3"</span>)</span>;
+String c=<span class="string">"3"</span>;
+
+System.out.println<span class="params">(a.hashCode<span class="params">()</span>==b.hashCode<span class="params">()</span>)</span>;<span class="comment">//true</span>
+System.out.println<span class="params">(a.hashCode<span class="params">()</span>==c.hashCode<span class="params">()</span>)</span>;<span class="comment">//true</span>
+System.out.println<span class="params">(a==b)</span>;<span class="comment">//false</span>
+System.out.println<span class="params">(a==c)</span>;<span class="comment">//true</span>
+</code></pre><p>hashCode码相等的两个String对象不一定相等，两个String对象相等的hashCode码一定相等。hashCode码的计算是按照String对象内容的ASCII值计算的，具体的计算公式：s[0]<em>31^(n-1) + s[1]</em>31^(n-2) + … + s[n-1]</p>
+<h2 id="总结">总结</h2><ul>
+<li>栈中用来存放一些原始数据类型的局部变量数据和对象的引用(String,数组.对象等等)但不存放对象内容。</li>
+<li>堆中存放使用new关键字创建的对象。</li>
+<li>字符串是一个特殊包装类,其引用是存放在栈里的,而对象内容必须根据创建方式不同定(常量池和堆)，有的是编译期就已经创建好，存放在字符串常量池中，而有的是运行时才被创建.使用new关键字，存放在堆中。</li>
+</ul>
+<hr>
+<p>博主水平有限，若有错漏，欢迎指正；同时欢迎转载以及CV操作，望注明出处，谢谢！</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/08/26/JAVA的自动装箱与拆箱/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          JAVA的自动装箱与拆箱
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="String" data-title="String虐我千百遍，我待String如初恋" data-url="http://haitun521.github.io/2015/08/07/String/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 呆呆
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
