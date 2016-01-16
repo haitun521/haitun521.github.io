@@ -8,9 +8,10 @@
   <meta name="description" content="项目与服务器分离
 删除webapps的所有内容
 在conf/server.xml的文件里配置
+
 &amp;lt;Host name=&quot;localhost&quot;  appBase=&quot;webapps&quot; unpackWARs=&quot;true&quot; autoDeploy=&quot;true&quot;&amp;gt;
         &amp;lt;!--
-        Context一个web应用程序通常为war文件，关于war的具体信息见servlet规">
+        Context一个web应用程序通常为war文件，关于war的具体信息见servlet">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Tomcat的用法">
 <meta property="og:url" content="http://haitun521.github.io/2016/01/13/Tomcat/index.html">
@@ -18,18 +19,20 @@
 <meta property="og:description" content="项目与服务器分离
 删除webapps的所有内容
 在conf/server.xml的文件里配置
+
 &amp;lt;Host name=&quot;localhost&quot;  appBase=&quot;webapps&quot; unpackWARs=&quot;true&quot; autoDeploy=&quot;true&quot;&amp;gt;
         &amp;lt;!--
-        Context一个web应用程序通常为war文件，关于war的具体信息见servlet规">
-<meta property="og:updated_time" content="2016-01-14T08:20:28.209Z">
+        Context一个web应用程序通常为war文件，关于war的具体信息见servlet">
+<meta property="og:updated_time" content="2016-01-16T02:28:18.583Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Tomcat的用法">
 <meta name="twitter:description" content="项目与服务器分离
 删除webapps的所有内容
 在conf/server.xml的文件里配置
+
 &amp;lt;Host name=&quot;localhost&quot;  appBase=&quot;webapps&quot; unpackWARs=&quot;true&quot; autoDeploy=&quot;true&quot;&amp;gt;
         &amp;lt;!--
-        Context一个web应用程序通常为war文件，关于war的具体信息见servlet规">
+        Context一个web应用程序通常为war文件，关于war的具体信息见servlet">
   
     <link rel="alternative" href="/atom.xml" title="呆呆与笨笨的博客" type="application/atom+xml">
   
@@ -55,7 +58,7 @@
 		</hgroup>
 
 		
-		<p class="header-subtitle">一只会Android开发的程序猿</p>
+		<p class="header-subtitle">一只会Android&amp;后台开发的程序猿</p>
 		
 
 		
@@ -146,7 +149,7 @@
 			  <h1 class="header-author">呆呆</h1>
 			</hgroup>
 			
-			<p class="header-subtitle">一只会Android开发的程序猿</p>
+			<p class="header-subtitle">一只会Android&amp;后台开发的程序猿</p>
 			
 			<nav class="header-menu">
 				<ul>
@@ -219,7 +222,8 @@
       
         <h2 id="项目与服务器分离">项目与服务器分离</h2><ul>
 <li>删除<code>webapps</code>的所有内容</li>
-<li><p>在<code>conf/server.xml</code>的文件里配置</p>
+<li>在<code>conf/server.xml</code>的文件里配置</li>
+</ul>
 <pre><code><span class="tag">&lt;<span class="title">Host</span> <span class="attribute">name</span>=<span class="value">"localhost"</span>  <span class="attribute">appBase</span>=<span class="value">"webapps"</span> <span class="attribute">unpackWARs</span>=<span class="value">"true"</span> <span class="attribute">autoDeploy</span>=<span class="value">"true"</span>&gt;</span>
         <span class="comment">&lt;!--
         Context一个web应用程序通常为war文件，关于war的具体信息见servlet规范，
@@ -229,10 +233,8 @@
         那么改变代码将不用再次重新启动tomcat
          --&gt;</span>
      <span class="tag">&lt;<span class="title">Context</span> <span class="attribute">docBase</span>=<span class="value">"E:\Tomcat\web\test"</span> <span class="attribute">path</span>=<span class="value">"/test"</span> <span class="attribute">reloadable</span>=<span class="value">"true"</span> /&gt;</span>
-  <span class="tag">&lt;/<span class="title">Host</span>&gt;</span>
-</code></pre></li>
-</ul>
-<h2 id="Tomcat_Server处理一个http请求的过程">Tomcat Server处理一个http请求的过程</h2><p>假设来自客户的请求为：<br><a href="http://localhost:8080/test/index.jsp" target="_blank" rel="external">http://localhost:8080/test/index.jsp</a> </p>
+<span class="tag">&lt;/<span class="title">Host</span>&gt;</span>
+</code></pre><h2 id="Tomcat_Server处理一个http请求的过程">Tomcat Server处理一个http请求的过程</h2><p>假设来自客户的请求为：<br><a href="http://localhost:8080/test/index.jsp" target="_blank" rel="external">http://localhost:8080/test/index.jsp</a> </p>
 <ul>
 <li>请求被发送到本机端口8080，被在那里侦听的Coyote HTTP/1.1 Connector获得 </li>
 <li>Connector把该请求交给它所在的Service的Engine来处理，并等待来自Engine的回应 </li>
