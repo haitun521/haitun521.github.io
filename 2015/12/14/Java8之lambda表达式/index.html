@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Java8之lambda表达式 | 呆呆与笨笨的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="简介
+Lambda expressions are a new and important feature included in Java SE 8. They provide a clear and concise way to represent one method interface using an expression. Lambda expressions also improve">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java8之lambda表达式">
+<meta property="og:url" content="http://haitun521.github.io/2015/12/14/Java8之lambda表达式/index.html">
+<meta property="og:site_name" content="呆呆与笨笨的博客">
+<meta property="og:description" content="简介
+Lambda expressions are a new and important feature included in Java SE 8. They provide a clear and concise way to represent one method interface using an expression. Lambda expressions also improve">
+<meta property="og:updated_time" content="2015-12-14T03:36:18.731Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java8之lambda表达式">
+<meta name="twitter:description" content="简介
+Lambda expressions are a new and important feature included in Java SE 8. They provide a clear and concise way to represent one method interface using an expression. Lambda expressions also improve">
+  
+    <link rel="alternative" href="/atom.xml" title="呆呆与笨笨的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="https://avatars0.githubusercontent.com/u/9667904?v=3&amp;s=460" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">呆呆</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">一只会Android开发的程序猿</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/tags/随笔">随笔</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/haitun521" title="github">github</a>
+					        
+								<a class="mail" target="_blank" href="/daidaiyubenben@gmail.com" title="mail">mail</a>
+					        
+								<a class="zhihu" target="_blank" href="/#" title="zhihu">zhihu</a>
+					        
+								<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Java-EE/" style="font-size: 10px;">Java EE</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Tomcat/" style="font-size: 10px;">Tomcat</a> <a href="/tags/android/" style="font-size: 10px;">android</a> <a href="/tags/android-studio/" style="font-size: 10px;">android studio</a> <a href="/tags/equals与/" style="font-size: 10px;">equals与==</a> <a href="/tags/hashCode/" style="font-size: 10px;">hashCode</a> <a href="/tags/int与Intager/" style="font-size: 10px;">int与Intager</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/java8/" style="font-size: 10px;">java8</a> <a href="/tags/lambda/" style="font-size: 20px;">lambda</a> <a href="/tags/自动装箱与拆箱/" style="font-size: 10px;">自动装箱与拆箱</a> <a href="/tags/设计模式/" style="font-size: 10px;">设计模式</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">呆呆</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="https://avatars0.githubusercontent.com/u/9667904?v=3&amp;s=460" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">呆呆</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">一只会Android开发的程序猿</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/tags/随笔">随笔</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/haitun521" title="github">github</a>
+			        
+						<a class="mail" target="_blank" href="/daidaiyubenben@gmail.com" title="mail">mail</a>
+			        
+						<a class="zhihu" target="_blank" href="/#" title="zhihu">zhihu</a>
+			        
+						<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-Java8之lambda表达式" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/12/14/Java8之lambda表达式/" class="article-date">
+  	<time datetime="2015-12-14T01:19:20.000Z" itemprop="datePublished">2015-12-14</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Java8之lambda表达式
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java8/">java8</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/lambda/">lambda</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/java/">java</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="简介">简介</h3><blockquote>
+<p>Lambda expressions are a new and important feature included in Java SE 8. They provide a clear and concise way to represent one method interface using an expression. Lambda expressions also improve the Collection libraries making it easier to iterate through, filter, and extract data from a Collection. In addition, new concurrency features improve performance in multicore environments.</p>
+</blockquote>
+<p>Lambda 表达式是一种匿名函数(对 Java 而言这并不完全正确，但现在姑且这么认为)，简单地说，它是没有声明的方法，也即没有访问修饰符、返回值声明和名字。本质只是一个”语法糖”,由编译器推断并帮你转换包装为常规的代码,因此你可以使用更少的代码来实现同样的功能。<br>通过下面的例子可以更加直观的明白：</p>
+<pre><code><span class="comment">// 匿名函数</span>
+new Thread<span class="params">(new Runnable<span class="params">()</span> {
+
+    @Override
+    public void run<span class="params">()</span> {
+
+        System.out.println<span class="params">(<span class="string">"annoymous inner class"</span>)</span>;
+    }
+})</span>.start<span class="params">()</span>;
+
+<span class="comment">// lambda表达式</span>
+new Thread<span class="params">(<span class="params">()</span> -&gt; System.out.println<span class="params">(<span class="string">"lambda"</span>)</span>)</span>.start<span class="params">()</span>;
+</code></pre><h3 id="语法">语法</h3><h4 id="基本语法：">基本语法：</h4><p><code>(parameters) -&gt; expression</code><br>或<br><code>(parameters) -&gt;{ statements; }</code><br>下面是lambda表达式的简单例子:</p>
+<pre><code><span class="comment">// 1. 不需要参数,返回值为 5</span>
+() -&gt; <span class="number">5</span>
+
+<span class="comment">// 2. 接收一个参数(数字类型),返回其2倍的值</span>
+x -&gt; <span class="number">2</span> * x
+
+<span class="comment">// 3. 接受2个参数(数字),并返回他们的差值</span>
+(x, y) -&gt; x – y
+
+<span class="comment">// 4. 接收2个int型整数,返回他们的和</span>
+(<span class="keyword">int</span> x, <span class="keyword">int</span> y) -&gt; x + y
+
+<span class="comment">// 5. 接受一个 string 对象,并在控制台打印,不返回任何值(看起来像是返回void)</span>
+(String s) -&gt; System.out.print(s)
+</code></pre><h4 id="表达式结构：">表达式结构：</h4><ul>
+<li><code>一个 Lambda 表达式可以有零个或多个参数</code></li>
+<li><code>参数的类型既可以明确声明，也可以根据上下文来推断。</code>例如：(int a)与(a)效果相同</li>
+<li><code>所有参数需包含在圆括号内，参数之间用逗号相隔。</code>例如：(a, b) 或 (int a, int b) 或 (String a, int b, float c)</li>
+<li><code>空圆括号代表参数集为空。</code>例如：() -&gt; 42</li>
+<li><code>当只有一个参数，且其类型可推导时，圆括号()可省略。</code>例如：x -&gt; 2*x</li>
+<li><code>Lambda 表达式的主体可包含零条或多条语句</code></li>
+<li><code>如果 Lambda 表达式的主体只有一条语句，花括号{}可省略。匿名函数的返回类型与该主体表达式一致</code></li>
+<li><code>如果Lambda表达式的主体包含一条以上语句，则表达式必须包含在花括号{}中（形成代码块）。匿名函数的返回类型与代码块的返回类型一致，若没有返回则为空</code></li>
+</ul>
+<h2 id="基本Lambda表达式例子">基本Lambda表达式例子</h2><h3 id="遍历集合">遍历集合</h3><pre><code>String[] str={<span class="string">"a"</span>,<span class="string">"b"</span>,<span class="string">"c"</span>,<span class="string">"d"</span>};
+<span class="keyword">List</span>&lt;String&gt; <span class="keyword">list</span>=Arrays.asList(str);
+
+<span class="comment">//以前的for循环遍历</span>
+<span class="keyword">for</span> (String s : <span class="keyword">list</span>) {
+    System.<span class="keyword">out</span>.println(s);
+}
+
+<span class="comment">//lambda表达式</span>
+<span class="keyword">list</span>.<span class="keyword">forEach</span>(s-&gt;System.<span class="keyword">out</span>.println(s));
+<span class="comment">//lambda的方法引用</span>
+<span class="keyword">list</span>.<span class="keyword">forEach</span>(System.<span class="keyword">out</span>::println);
+</code></pre><h3 id="替代匿名类">替代匿名类</h3><pre><code><span class="comment">// 使用匿名内部类</span>
+btn.setOnAction(<span class="keyword">new</span> EventHandler&lt;ActionEvent&gt;() {
+          @<span class="function">Override
+          <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">handle</span>(<span class="params">ActionEvent <span class="keyword">event</span></span>) </span>{
+              System.<span class="keyword">out</span>.println(<span class="string">"Hello World!"</span>); 
+          }
+    });
+
+<span class="comment">// 使用 lambda expression</span>
+btn.setOnAction(<span class="keyword">event</span> -&gt; System.<span class="keyword">out</span>.println(<span class="string">"Hello World!"</span>));
+</code></pre><h3 id="集合排序">集合排序</h3><pre><code>Integer[] num = { <span class="number">2</span>, <span class="number">4</span>, <span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">3</span> };
+List&lt;Integer&gt; lists = Arrays.asList(num);
+
+<span class="comment">//匿名函数</span>
+lists.sort(<span class="keyword">new</span> Comparator&lt;Integer&gt;() {
+
+    @<span class="function">Override
+    <span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(Integer o1, Integer o2)</span> </span>{
+        <span class="keyword">return</span> o1 - o2;
+    }
+});
+
+<span class="comment">//lambda表达式</span>
+lists.sort((a, b) -&gt; a - b);
+</code></pre><h2 id="方法引用和构造器引用">方法引用和构造器引用</h2><h3 id="方法引用">方法引用</h3><p>前面介绍lambda表达式例子的时候，已经看过方法引用的身影了。方法引用可以在某些条件成立的情况下，更加简化lambda表达式的声明。方法引用语法格式有以下三种：</p>
+<ul>
+<li><code>objectName::instanceMethod</code></li>
+<li><code>ClassName::staticMethod</code></li>
+<li><code>ClassName::instanceMethod</code></li>
+</ul>
+<p>前两种方式类似，等同于把lambda表达式的参数直接当成instanceMethod|staticMethod的参数来调用。比如<code>System.out::println</code>等同于<code>x-&gt;System.out.println(x)</code>；<code>Math::max</code>等同于<code>(x, y)-&gt;Math.max(x,y)</code>。</p>
+<p>最后一种方式，等同于把lambda表达式的第一个参数当成instanceMethod的目标对象，其他剩余参数当成该方法的参数。比如<code>String::toLowerCase</code>等同于<code>x-&gt;x.toLowerCase()</code>。</p>
+<h3 id="构造器引用">构造器引用</h3><p>构造器引用语法如下：<code>ClassName::new</code>，把lambda表达式的参数当成ClassName构造器的参数 。<br>例如<code>BigDecimal::new</code>等同于<code>x-&gt;new BigDecimal(x)</code>。</p>
+<hr>
+<p>博主水平有限，若有错漏，欢迎指正；同时欢迎转载以及CV操作，望注明出处，谢谢！</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/01/13/Tomcat/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          Tomcat的用法
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/12/10/Android-Studio中使用lambda表达式/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">在Android Studio中使用lambda表达式</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="Java8之lambda表达式" data-title="Java8之lambda表达式" data-url="http://haitun521.github.io/2015/12/14/Java8之lambda表达式/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 呆呆
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

@@ -3,18 +3,33 @@
 <head>
   <meta charset="utf-8">
   
-  <title>JAVA的自动装箱与拆箱 | 呆呆与笨笨的博客</title>
+  <title>Tomcat的用法 | 呆呆与笨笨的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="JAVA的自动装箱与拆箱">
+  <meta name="description" content="项目与服务器分离
+删除webapps的所有内容
+在conf/server.xml的文件里配置
+&amp;lt;Host name=&quot;localhost&quot;  appBase=&quot;webapps&quot; unpackWARs=&quot;true&quot; autoDeploy=&quot;true&quot;&amp;gt;
+        &amp;lt;!--
+        Context一个web应用程序通常为war文件，关于war的具体信息见servlet规">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JAVA的自动装箱与拆箱">
-<meta property="og:url" content="http://haitun521.github.io/2015/08/26/JAVA的自动装箱与拆箱/index.html">
+<meta property="og:title" content="Tomcat的用法">
+<meta property="og:url" content="http://haitun521.github.io/2016/01/13/Tomcat/index.html">
 <meta property="og:site_name" content="呆呆与笨笨的博客">
-<meta property="og:description" content="JAVA的自动装箱与拆箱">
-<meta property="og:updated_time" content="2015-08-26T14:52:46.973Z">
+<meta property="og:description" content="项目与服务器分离
+删除webapps的所有内容
+在conf/server.xml的文件里配置
+&amp;lt;Host name=&quot;localhost&quot;  appBase=&quot;webapps&quot; unpackWARs=&quot;true&quot; autoDeploy=&quot;true&quot;&amp;gt;
+        &amp;lt;!--
+        Context一个web应用程序通常为war文件，关于war的具体信息见servlet规">
+<meta property="og:updated_time" content="2016-01-14T08:20:28.209Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JAVA的自动装箱与拆箱">
-<meta name="twitter:description" content="JAVA的自动装箱与拆箱">
+<meta name="twitter:title" content="Tomcat的用法">
+<meta name="twitter:description" content="项目与服务器分离
+删除webapps的所有内容
+在conf/server.xml的文件里配置
+&amp;lt;Host name=&quot;localhost&quot;  appBase=&quot;webapps&quot; unpackWARs=&quot;true&quot; autoDeploy=&quot;true&quot;&amp;gt;
+        &amp;lt;!--
+        Context一个web应用程序通常为war文件，关于war的具体信息见servlet规">
   
     <link rel="alternative" href="/atom.xml" title="呆呆与笨笨的博客" type="application/atom+xml">
   
@@ -161,11 +176,11 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-JAVA的自动装箱与拆箱" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Tomcat" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/08/26/JAVA的自动装箱与拆箱/" class="article-date">
-  	<time datetime="2015-08-26T13:27:43.000Z" itemprop="datePublished">2015-08-26</time>
+      <a href="/2016/01/13/Tomcat/" class="article-date">
+  	<time datetime="2016-01-13T07:59:25.000Z" itemprop="datePublished">2016-01-13</time>
 </a>
     </div>
   
@@ -178,7 +193,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      JAVA的自动装箱与拆箱
+      Tomcat的用法
     </h1>
   
 
@@ -187,12 +202,12 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/int与Intager/">int与Intager</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/自动装箱与拆箱/">自动装箱与拆箱</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java-EE/">Java EE</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Tomcat/">Tomcat</a></li></ul>
 	</div>
 
         
 	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/JAVA/">JAVA</a>
+	<a class="article-category-link" href="/categories/Tomcat/">Tomcat</a>
 	</div>
 
 
@@ -202,48 +217,37 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="自动装箱与拆箱">自动装箱与拆箱</h1><ul>
-<li>自动装箱和拆箱从Java 1.5开始引入，目的是将原始类型值转自动地转换成对应的对象。自动装箱与拆箱的机制可以让我们在Java的变量赋值或者是方法调用等情况下使用原始类型或者对象类型更加简单直接。</li>
-<li>java语言规范中说道：在许多情况下包装与解包装是由编译器自行完成的（在这种情况下包装称为装箱，解包装称为拆箱）；因为这里的装箱和拆箱是自动进行的非人为转换，所以就称作为自动装箱和拆箱。</li>
-<li>我个人认为：<strong>自动装箱就是把基本数据类型转换成对应的对象，反之，则为自动拆箱</strong>。</li>
+        <h2 id="项目与服务器分离">项目与服务器分离</h2><ul>
+<li>删除<code>webapps</code>的所有内容</li>
+<li><p>在<code>conf/server.xml</code>的文件里配置</p>
+<pre><code><span class="tag">&lt;<span class="title">Host</span> <span class="attribute">name</span>=<span class="value">"localhost"</span>  <span class="attribute">appBase</span>=<span class="value">"webapps"</span> <span class="attribute">unpackWARs</span>=<span class="value">"true"</span> <span class="attribute">autoDeploy</span>=<span class="value">"true"</span>&gt;</span>
+        <span class="comment">&lt;!--
+        Context一个web应用程序通常为war文件，关于war的具体信息见servlet规范，
+        docBase应用程序的路径或者war 文件的存放路径，
+        path表示此web程序的url前缀 ex：/test，    
+        reloadable如果为true，Tomcat会自动检测应用程序的变化，自动装载新的应用程序，
+        那么改变代码将不用再次重新启动tomcat
+         --&gt;</span>
+     <span class="tag">&lt;<span class="title">Context</span> <span class="attribute">docBase</span>=<span class="value">"E:\Tomcat\web\test"</span> <span class="attribute">path</span>=<span class="value">"/test"</span> <span class="attribute">reloadable</span>=<span class="value">"true"</span> /&gt;</span>
+  <span class="tag">&lt;/<span class="title">Host</span>&gt;</span>
+</code></pre></li>
 </ul>
-<blockquote>
-<p>八种数据基本类型与对应的对象：<br>  byte,short,char,int,long,float,double和boolean对应的对象为<br>  Byte,Short,Character,Integer,Long,Float,Double,Boolean。</p>
-</blockquote>
-<h2 id="举例说明">举例说明</h2><pre><code>Integer i=<span class="number">21</span>;<span class="comment">//装箱 编译器解析为Integer i = new Integer(21);</span>
-<span class="keyword">int</span> j=i;<span class="comment">//拆箱  实际上执行了 int j = i.intValue();</span>
-System.out.println(i++);<span class="comment">//在运算时也可以进行拆箱</span>
-</code></pre><h2 id="int与Intager的自动拆箱与装箱">int与Intager的自动拆箱与装箱</h2><pre><code>Integer i=<span class="number">200</span>;
-<span class="keyword">int</span> j=<span class="number">200</span>;
-System.out.println(i==j);<span class="comment">//true </span>
-</code></pre><p> 对象i自动拆箱为int类型，值为200。</p>
-<pre><code><span class="built_in">int</span> i=<span class="number">200</span>;
-<span class="type">Integer</span> j=new <span class="type">Integer</span>(i);
-/*
-<span class="keyword">public</span> <span class="type">Integer</span>(<span class="built_in">int</span> <span class="keyword">value</span>) {
-    this.<span class="keyword">value</span> = <span class="keyword">value</span>;
-}
-*/
-System.<span class="type">out</span>.println(i==j);//true 
-</code></pre><p>通过Integer(int value)这个方法能够知道对象 j 与变量 i指向同一个值</p>
-<pre><code><span class="constant">Integer i</span>=<span class="number">200</span>;
-<span class="constant">Integer j</span>=<span class="number">200</span>;        
-<span class="constant">System.out.println(i</span>==j);<span class="comment">//false</span>
-<span class="constant">
-Integer a</span>=<span class="number">100</span>;
-<span class="constant">Integer b</span>=<span class="number">100</span>;        
-<span class="constant">System.out.println(a</span>==b);<span class="comment">//true</span>
-</code></pre><p>前面说过，int 的自动装箱，是编译器执行了 Integer.valueOf(int i)，先看看Integer.java的源码：</p>
-<pre><code><span class="keyword">public</span> <span class="keyword">static</span> <span class="function">Integer <span class="title">valueOf</span><span class="params">(<span class="keyword">int</span> i)</span> </span>{
-    <span class="keyword">if</span> (i &gt;= IntegerCache.low &amp;&amp; i &lt;= IntegerCache.high)<span class="comment">// IntegerCache.low=-128, IntegerCache.high默认为127</span>
-        <span class="keyword">return</span> IntegerCache.cache[i + (-IntegerCache.low)];
-    <span class="keyword">return</span> <span class="keyword">new</span> Integer(i);
-}
-</code></pre><p>java对于Integer与int的自动装箱与拆箱的设计，是一种模式：叫享元模式（flyweight）。为了加大对简单数字的重利用，java定义：在自动装箱时对于值从–128到127之间的值，它们被装箱为Integer对象后，会存在内存中被重用，始终只存在一个对象<br>而如果超过了从–128到127之间的值，被装箱后的Integer对象并不会被重用，即相当于每次装箱时都新建一个 Integer对象。</p>
-<pre><code><span class="built_in">Integer</span> i=<span class="literal">new</span> <span class="built_in">Integer</span>(<span class="number">10</span>);
-<span class="built_in">Integer</span> j=<span class="literal">new</span> <span class="built_in">Integer</span>(<span class="number">10</span>);        
-System<span class="built_in">.</span>out<span class="built_in">.</span>println(i==j);<span class="comment">//false </span>
-</code></pre><p>当不使用自动装箱功能的时候，情况与普通类对象一样</p>
+<h2 id="Tomcat_Server处理一个http请求的过程">Tomcat Server处理一个http请求的过程</h2><p>假设来自客户的请求为：<br><a href="http://localhost:8080/test/index.jsp" target="_blank" rel="external">http://localhost:8080/test/index.jsp</a> </p>
+<ul>
+<li>请求被发送到本机端口8080，被在那里侦听的Coyote HTTP/1.1 Connector获得 </li>
+<li>Connector把该请求交给它所在的Service的Engine来处理，并等待来自Engine的回应 </li>
+<li>Engine获得请求localhost/test/index.jsp，匹配它所拥有的所有虚拟主机Host </li>
+<li>Engine匹配到名为localhost的Host（即使匹配不到也把请求交给该Host处理，因为该Host被定义为该Engine的默认主机） </li>
+<li>localhost Host获得请求/test/index.jsp，匹配它所拥有的所有Context </li>
+<li>Host匹配到路径为/test的Context（如果匹配不到就把该请求交给路径名为””的Context去处理） </li>
+<li>path=”/test”的Context获得请求/index.jsp，在它的mapping table中寻找对应的servlet </li>
+<li>Context匹配到URL PATTERN为*.jsp的servlet，对应于JspServlet类 </li>
+<li>构造HttpServletRequest对象和HttpServletResponse对象，作为参数调用JspServlet的doGet或 doPost方法 </li>
+<li>Context把执行完了之后的HttpServletResponse对象返回给Host </li>
+<li>Host把HttpServletResponse对象返回给Engine </li>
+<li>Engine把HttpServletResponse对象返回给Connector </li>
+<li>Connector把HttpServletResponse对象返回给客户browser </li>
+</ul>
 <hr>
 <p>博主水平有限，若有错漏，欢迎指正；同时欢迎转载以及CV操作，望注明出处，谢谢！</p>
 
@@ -255,18 +259,18 @@ System<span class="built_in">.</span>out<span class="built_in">.</span>println(i
     
 <nav id="article-nav">
   
-    <a href="/2015/12/10/Android-Studio中使用lambda表达式/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/01/15/代理模式/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          在Android Studio中使用lambda表达式
+          Java设计模式之代理模式
         
       </div>
     </a>
   
   
-    <a href="/2015/08/07/String/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">String虐我千百遍，我待String如初恋</div>
+    <a href="/2015/12/14/Java8之lambda表达式/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java8之lambda表达式</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -295,7 +299,7 @@ System<span class="built_in">.</span>out<span class="built_in">.</span>println(i
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="JAVA的自动装箱与拆箱" data-title="JAVA的自动装箱与拆箱" data-url="http://haitun521.github.io/2015/08/26/JAVA的自动装箱与拆箱/"></div>
+	<div class="ds-thread" data-thread-key="Tomcat" data-title="Tomcat的用法" data-url="http://haitun521.github.io/2016/01/13/Tomcat/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
